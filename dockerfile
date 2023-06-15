@@ -1,13 +1,8 @@
-FROM node:bullseye
-ARG WORKDIR
+FROM node:slim
 
-ENV HOME=/${WORKDIR} \
-    LANG=ja_JP.UTF-8
+WORKDIR /app
 
-WORKDIR ${HOME}
-
-RUN apt-get update \
-    && yarn install
+RUN apt-get update && yarn install
 
 EXPOSE 8080
-CMD ["yarn", "dev", "--host"] 
+CMD [ "yarn" "dev" "--host" ]
