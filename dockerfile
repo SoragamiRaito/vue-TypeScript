@@ -4,5 +4,5 @@ WORKDIR /app
 
 RUN apt-get update && yarn install
 
-EXPOSE 8080
+EXPOSE 5173
 CMD [ "yarn" "dev" "--host" ]
